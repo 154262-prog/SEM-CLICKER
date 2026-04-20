@@ -1,0 +1,172 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #0f1014;
+  color: #f5f5f5;
+}
+
+.header {
+  text-align: center;
+  padding: 20px 10px;
+  background: #151720;
+  border-bottom: 1px solid #262938;
+}
+
+.header h1 {
+  margin: 0 0 10px;
+}
+
+.player-input {
+  margin-bottom: 10px;
+}
+
+.player-input input {
+  padding: 4px 6px;
+  border-radius: 4px;
+  border: 1px solid #333;
+  background: #11131a;
+  color: #f5f5f5;
+}
+
+.player-input button {
+  margin-left: 6px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: none;
+  background: #3b82f6;
+  color: white;
+  cursor: pointer;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 10px 40px;
+  gap: 20px;
+}
+
+.circle-btn {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 4px solid #3b82f6;
+  background: radial-gradient(circle at 30% 30%, #3b82f6, #11131a);
+  color: #f5f5f5;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 0 25px rgba(59, 130, 246, 0.4);
+  transition: transform 0.05s ease, box-shadow 0.1s ease;
+}
+
+.circle-btn:active {
+  transform: scale(0.96);
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.6);
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.menu button {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  background: #1f2937;
+  color: #e5e7eb;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.menu button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.panel {
+  display: none;
+  background: #151720;
+  border-radius: 10px;
+  padding: 16px;
+  width: 340px;
+  max-width: 95vw;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.panel h2 {
+  margin-top: 0;
+}
+
+.panel h3 {
+  margin-bottom: 6px;
+}
+
+.shop-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 6px 0;
+  padding: 6px 8px;
+  background: #11131a;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.shop-item button {
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: none;
+  background: #3b82f6;
+  color: white;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.close-btn {
+  margin-top: 10px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  background: #374151;
+  color: #e5e7eb;
+  cursor: pointer;
+}
+
+#gambleResult {
+  margin-top: 10px;
+  min-height: 20px;
+}
+
+#gambleAmount {
+  width: 80px;
+  padding: 4px;
+  border-radius: 4px;
+  border: 1px solid #333;
+  background: #11131a;
+  color: #f5f5f5;
+}
+
+#leaderboardList {
+  padding-left: 20px;
+  margin: 8px 0 0;
+}
+
+#resetGame {
+  margin-top: 8px;
+  background: #b91c1c;
+}
