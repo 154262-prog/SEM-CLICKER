@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <title>Magister Lanting Clicker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <h1>Magister Lanting Clicker</h1>
+    <div class="player-input">
+      <label>Naam:
+        <input id="playerName" type="text" placeholder="Jouw naam">
+      </label>
+      <button id="confirmName">Bevestigen</button>
+    </div>
+    <div class="stats">
+      <span>Lantings: <span id="lantings">0</span></span>
+      <span>Per klik: <span id="perClick">1</span></span>
+      <span>Per seconde: <span id="perSecond">0</span></span>
+    </div>
+  </header>
+
+  <main class="main">
+    <button class="circle-btn" id="clickBtn">Klik!</button>
+
+    <nav class="menu">
+      <button data-panel="shopPanel">Shop</button>
+      <button data-panel="gamblePanel" id="gambleMenuBtn" disabled>Gamble</button>
+      <button data-panel="skinsPanel">Skins</button>
+      <button data-panel="settingsPanel">Settings</button>
+      <button data-panel="leaderboardPanel">Leaderboard</button>
+    </nav>
+
+    <!-- Shop -->
+    <section class="panel" id="shopPanel">
+      <h2>Shop</h2>
+      <p>Je hebt <span id="shopLantings">0</span> Lantings</p>
+
+      <h3>Per klik upgrades</h3>
+      <div class="shop-item">
+        <span>+1 per klik</span>
+        <button data-cost="30" data-upgrade="click">30</button>
+      </div>
+      <div class="shop-item">
+        <span>+5 per klik</span>
+        <button data-cost="120" data-upgrade="click5">120</button>
+      </div>
+
+      <h3>Per seconde upgrades</h3>
+      <div class="shop-item">
+        <span>+1 per seconde</span>
+        <button data-cost="50" data-upgrade="ps1">50</button>
+      </div>
+      <div class="shop-item">
+        <span>+5 per seconde</span>
+        <button data-cost="200" data-upgrade="ps5">200</button>
+      </div>
+
+      <h3>Special</h3>
+      <div class="shop-item">
+        <span>Ontgrendel Gamble</span>
+        <button data-cost="150" data-upgrade="gamble">150</button>
+      </div>
+
+      <button class="close-btn" data-close>Sluiten</button>
+    </section>
+
+    <!-- Gamble -->
+    <section class="panel" id="gamblePanel">
+      <h2>Gamble</h2>
+      <p>Roll een getal tussen 1 en 10.</p>
+      <p>Inzet: <input id="gambleAmount" type="number" min="1" value="10"></p>
+      <button id="gambleRollBtn">Roll</button>
+      <p id="gambleResult"></p>
+      <button class="close-btn" data-close>Sluiten</button>
+    </section>
+
+    <!-- Skins -->
+    <section class="panel" id="skinsPanel">
+      <h2>Skins</h2>
+      <p>Skins geven een multiplier op je per-klik waarde.</p>
+      <div class="shop-item">
+        <span>Blauwe Skin (x1.5)</span>
+        <button data-skin="blue" data-cost="200">200</button>
+      </div>
+      <div class="shop-item">
+        <span>Gouden Skin (x2)</span>
+        <button data-skin="gold" data-cost="500">500</button>
+      </div>
+      <p>Actieve skin: <span id="activeSkin">Geen</span></p>
+      <button class="close-btn" data-close>Sluiten</button>
+    </section>
+
+    <!-- Settings -->
+    <section class="panel" id="settingsPanel">
+      <h2>Settings</h2>
+      <p>Keybind voor klikken: <span id="keybindLabel">ENTER</span></p>
+      <button id="rebindKey">Herbind key</button>
+
+      <h3>Statistieken</h3>
+      <p>Speeltijd: <span id="playTime">0</span> s</p>
+      <p>Totaal verdiend: <span id="totalEarned">0</span></p>
+      <p>Totaal verloren (gamble): <span id="totalLost">0</span></p>
+      <p>Hoogste ooit: <span id="highestEver">0</span></p>
+
+      <button id="resetGame">Reset game</button>
+      <button class="close-btn" data-close>Sluiten</button>
+    </section>
+
+    <!-- Leaderboard -->
+    <section class="panel" id="leaderboardPanel">
+      <h2>Leaderboard (lokaal)</h2>
+      <ol id="leaderboardList"></ol>
+      <button class="close-btn" data-close>Sluiten</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
